@@ -1,0 +1,28 @@
+{
+  "name": "vue-cli-plugin-vuestorm",
+  "version": "1.0.0",
+  "description": "WinterCMS plugin for vue-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/phpiando/vuestorm-cli.git"
+  },
+  "keywords": [
+    "wintercms",
+    "vue",
+    "winter",
+    "storm"
+  ],
+  "author": "Roni Sommerfeld",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phpiando/vuestorm-cli/issues"
+  },
+  "homepage": "https://github.com/phpiando/vuestorm-cli#readme",
+  "dependencies": {
+    "write-file-webpack-plugin": "^4.5.1"
+  }
+}

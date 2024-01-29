@@ -1,0 +1,13 @@
+title = "<%= options.name %>"
+url = "/:all?*"
+==
+function onStart()
+{
+    App::abort(500, 'Vuestorm entry point is not built, execute "npm run build" or "yarn build" and try again.');
+}
+==
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body></body>
+</html>
