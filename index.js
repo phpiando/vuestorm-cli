@@ -1,6 +1,7 @@
-const fs = require("fs");
-const path = require("path");
-const WriteFilePlugin = require("write-file-webpack-plugin");
+const fs                = require("fs");
+const path              = require("path");
+const WriteFilePlugin   = require("write-file-webpack-plugin");
+const HtmlWepackPlugin  = require("html-webpack-plugin");
 
 function getProductionBaseUrl(api, pluginOptions) {
   var baseUrl = pluginOptions.baseUrl;
@@ -34,17 +35,15 @@ module.exports = (api, options) => {
     options.outputDir = "assets";
 
     api.chainWebpack(function (config) {
-      config.plugin("html").tap(function (args) {
-        Object.assign(args[0], {
-          minify: Object.assign(args[0].minify || {}, {
+      config.plugin("html").use(HtmlWepackPlugin, [
+        {
+          minify: {
             removeComments: true,
-          }),
+          },
           filename: "../pages/index.htm",
           template: "src/index.htm",
-        });
-
-        return args;
-      });
+        },
+      ]);
     });
   }
 
