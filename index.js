@@ -24,7 +24,9 @@ function resolveProperty(obj, p) {
 }
 
 module.exports = (api, options) => {
-  var isProduction = process.env.NODE_ENV === "production";
+  var isProduction = process.env.NODE_ENV !== "development";
+
+  console.log("[VueSTORM] Environment:", process.env.NODE_ENV);
 
   if(isProduction){
     var pluginOptions = resolveProperty(options, "pluginOptions.vuestorm") || {
